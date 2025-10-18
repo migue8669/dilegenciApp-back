@@ -1,11 +1,13 @@
 package com.proyecto.models;
 
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
+
 
 @Entity
 @Table(name="usuarios")
-public class Usuarios {
+public class UsuariosModel {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;

@@ -1,9 +1,9 @@
 package com.proyecto.repositories;
 
-import com.proyecto.models.Usuarios;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.proyecto.models.UsuariosModel;
 import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface IUsuarioRepository extends JpaRepository<Usuarios,Long> {
+public interface IUsuarioRepository extends JpaRepository<UsuariosModel,Long> {
 }
