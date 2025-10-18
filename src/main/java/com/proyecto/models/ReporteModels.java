@@ -1,7 +1,7 @@
 package com.proyecto.models;
 
 import org.springframework.data.annotation.Id;
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="user")
