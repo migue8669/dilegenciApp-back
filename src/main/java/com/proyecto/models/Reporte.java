@@ -1,15 +1,29 @@
 package com.proyecto.models;
 
-public class Reporte {
+import org.springframework.data.annotation.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name="user")
+public class Reporte {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
+    @Column
     private String title;
+    @Column
     private String servicio;
+    @Column
     private String direccion;
+    @Column
     private Number telefono;
+    @Column
     private Number precio;
+    @Column
     private Number lat;
+    @Column
     private Number lng;
+    @Column
     private String usuario;
 
     public long getId() {

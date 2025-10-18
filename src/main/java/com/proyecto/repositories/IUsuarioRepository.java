@@ -1,9 +1,9 @@
 package com.proyecto.repositories;
 
-import com.proyecto.models.Reporte;
+import com.proyecto.models.Usuarios;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IReporteRepository extends JpaRepository<Reporte,Long> {
+public interface IUsuarioRepository extends JpaRepository<Usuarios,Long> {
 }

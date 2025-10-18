@@ -1,8 +1,17 @@
 package com.proyecto.models;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="usuarios")
 public class Usuarios {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
+    @Column
     private String username;
+    @Column
     private String password;
 
     public long getId() {
