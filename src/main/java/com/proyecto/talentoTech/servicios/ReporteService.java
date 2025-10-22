@@ -1,7 +1,8 @@
-package com.proyecto.servicios;
+package com.proyecto.talentoTech.servicios;
 
-import com.proyecto.models.ReporteModels;
-import com.proyecto.repositories.IReporteRepository;
+import com.proyecto.talentoTech.models.ReporteModels;
+import com.proyecto.talentoTech.repositories.IReporteRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +26,9 @@ public class ReporteService {
         return reporteRepository.findById(id);
     }
     public ReporteModels updateById(ReporteModels request, Long id){
-        ReporteModels report=reporteRepository.findById(id).get();
-        report.setTitle(request.getTitle());
+
+        ReporteModels report = reporteRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Reporte con ID " + id + " no encontrado para actualizar."));        report.setTitulo(request.getTitulo());
         report.setServicio(request.getServicio());
         report.setPrecio(request.getPrecio());
         report.setDireccion(request.getDireccion());
@@ -34,7 +36,7 @@ public class ReporteService {
         report.setLat(request.getLat());
         report.setLng(request.getLng());
         report.setUsuario(request.getUsuario());
-        return report;
+        return reporteRepository.save(report);
     }
     public Boolean deleteReporte(Long id){
         try {

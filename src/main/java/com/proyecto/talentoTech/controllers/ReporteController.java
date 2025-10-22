@@ -1,14 +1,17 @@
-package com.proyecto.controllers;
+package com.proyecto.talentoTech.controllers;
 
-import com.proyecto.models.ReporteModels;
+import com.proyecto.talentoTech.models.ReporteModels;
 
-import com.proyecto.servicios.ReporteService;
+import com.proyecto.talentoTech.servicios.ReporteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/reporte")
 public class ReporteController {
@@ -31,17 +34,19 @@ public class ReporteController {
     }
 
     @PutMapping(path = "/{id}")
-    public ReporteModels updateReporteById(@RequestBody ReporteModels request, Long id) {
+    public ReporteModels updateReporteById(@RequestBody ReporteModels request, @PathVariable("id") Long id ) {
         return this.reporteService.updateById(request, id);
     }
 
     @DeleteMapping(path = "/{id}")
-    public String deleteReporteById(@PathVariable("id") Long id) {
+    public ResponseEntity<Object> deleteReporteById(@PathVariable("id") Long id) {
         boolean ok = this.reporteService.deleteReporte(id);
         if (ok) {
-            return id + " eliminado";
+            // Devuelve el código de estado HTTP 204 (No Content) para una eliminación exitosa sin cuerpo.
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
-            return "Error al eliminar";
+            // Devuelve 500 si la eliminación falló en el servicio (o 404 si manejaste la excepción).
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

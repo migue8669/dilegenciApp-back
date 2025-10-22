@@ -1,16 +1,24 @@
-package com.proyecto.models;
+package com.proyecto.talentoTech.models;
 
-import org.springframework.data.annotation.Id;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="user")
+@Table(name="reporte")
 public class ReporteModels {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     @Column
-    private String title;
+    private String titulo;
     @Column
     private String servicio;
     @Column
@@ -34,13 +42,7 @@ public class ReporteModels {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
-    }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public String getServicio() {
         return servicio;

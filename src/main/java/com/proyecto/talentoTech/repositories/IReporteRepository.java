@@ -1,6 +1,6 @@
-package com.proyecto.repositories;
+package com.proyecto.talentoTech.repositories;
 
-import com.proyecto.models.ReporteModels;
+import com.proyecto.talentoTech.models.ReporteModels;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,4 @@
-package com.proyecto.models;
-
-
+package com.proyecto.talentoTech.models;
 
 import jakarta.persistence.*;
 
@@ -15,6 +13,28 @@ public class UsuariosModel {
     private String username;
     @Column
     private String password;
+    @Column
+    private String email;
+    @Column
+    private String phone;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+
 
     public long getId() {
         return id;
