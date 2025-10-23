@@ -33,7 +33,7 @@ public class ReporteModels {
     @Column
     private Number lng;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_id") // Define la columna de clave foránea
+    @JoinColumn(name = "username") // Define la columna de clave foránea
     private UsuariosModel usuario; // <-- Debe ser la clase, no String
 
     // --- Getters y Setters Corregidos ---
