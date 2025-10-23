@@ -1,5 +1,6 @@
 package com.proyecto.talentoTech.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 @Entity
@@ -31,16 +32,15 @@ public class ReporteModels {
     private Number lat;
     @Column
     private Number lng;
-    @Column
-    private String usuario;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id") // Define la columna de clave foránea
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "reportes"}) // <-- Solución al 502
+    private UsuariosModel usuario; // <-- Debe ser la clase, no String
 
-    public long getId() {
-        return id;
-    }
+    // --- Getters y Setters Corregidos ---
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    // No necesitas getters/setters para `usuario` si usas DTOs, pero se incluyen para integridad:
+
 
 
 
@@ -92,11 +92,11 @@ public class ReporteModels {
         this.lng = lng;
     }
 
-    public String getUsuario() {
+    public UsuariosModel getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
+    public void setUsuario(UsuariosModel usuario) {
         this.usuario = usuario;
     }
 }
