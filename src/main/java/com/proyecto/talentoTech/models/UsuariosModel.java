@@ -9,7 +9,6 @@ import java.util.List;
 
 @Entity
 @Table(name="usuarios")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "reportes"})
 public class UsuariosModel {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -23,7 +22,6 @@ public class UsuariosModel {
     @Column
     private String phone;
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    // Usamos @JsonIgnore para romper el ciclo desde el lado de Usuarios:
     @JsonIgnore
     private List<ReporteModels> reportes;
 
