@@ -5,6 +5,7 @@ import com.proyecto.talentoTech.repositories.IReporteRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -13,7 +14,7 @@ import java.util.Optional;
 public class ReporteService {
     @Autowired
     IReporteRepository reporteRepository;
-
+    @Transactional(readOnly = true) // <-- SOLUCIÓN CRÍTICA
     public ArrayList<ReporteModels> getReporte(){
         return (ArrayList<ReporteModels>) reporteRepository.findAll();
     }

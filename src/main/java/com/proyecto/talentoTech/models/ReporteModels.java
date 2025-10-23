@@ -34,7 +34,6 @@ public class ReporteModels {
     private Number lng;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id") // Define la columna de clave foránea
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "reportes"}) // <-- Solución al 502
     private UsuariosModel usuario; // <-- Debe ser la clase, no String
 
     // --- Getters y Setters Corregidos ---
