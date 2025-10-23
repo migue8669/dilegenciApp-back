@@ -27,13 +27,13 @@ public class ReporteModels {
     @Column
     private String telefono;
     @Column
-    private String precio;
+    private Double precio;
     @Column
-    private String lat;
+    private Double lat;
     @Column
-    private String lng;
+    private Double lng;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "username") // Define la columna de clave foránea
+    @JoinColumn(name = "usuario_id") // Define la columna de clave foránea
     private UsuariosModel usuario; // <-- Debe ser la clase, no String
 
     // --- Getters y Setters Corregidos ---
@@ -67,27 +67,27 @@ public class ReporteModels {
         this.telefono = telefono;
     }
 
-    public String getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
-    public String getLat() {
+    public Double getLat() {
         return lat;
     }
 
-    public void setLat(String lat) {
+    public void setLat(Double lat) {
         this.lat = lat;
     }
 
-    public String getLng() {
+    public Double getLng() {
         return lng;
     }
 
-    public void setLng(String lng) {
+    public void setLng(Double lng) {
         this.lng = lng;
     }
 
