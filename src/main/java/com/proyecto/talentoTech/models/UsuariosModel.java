@@ -1,10 +1,15 @@
 package com.proyecto.talentoTech.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 
 @Entity
 @Table(name="usuarios")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) // <-- ¡AÑADIR ESTO!
 public class UsuariosModel {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -17,7 +22,20 @@ public class UsuariosModel {
     private String email;
     @Column
     private String phone;
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<ReporteModels> reportes;
 
+    // ... Resto de Getters y Setters...
+
+    // Getter y Setter para reportes
+    public List<ReporteModels> getReportes() {
+        return reportes;
+    }
+
+    public void setReportes(List<ReporteModels> reportes) {
+        this.reportes = reportes;
+    }
     public String getEmail() {
         return email;
     }
