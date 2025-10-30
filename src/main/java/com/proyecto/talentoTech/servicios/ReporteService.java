@@ -1,6 +1,6 @@
 package com.proyecto.talentoTech.servicios;
 
-import com.proyecto.talentoTech.models.ReporteModels;
+import com.proyecto.talentoTech.models.ReporteModel;
 import com.proyecto.talentoTech.repositories.IReporteRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,20 +14,20 @@ public class ReporteService {
     @Autowired
     IReporteRepository reporteRepository;
 
-    public ArrayList<ReporteModels> getReporte(){
-        return (ArrayList<ReporteModels>) reporteRepository.findAll();
+    public ArrayList<ReporteModel> getReporte(){
+        return (ArrayList<ReporteModel>) reporteRepository.findAll();
     }
 
-    public ReporteModels saveReporte(ReporteModels report){
+    public ReporteModel saveReporte(ReporteModel report){
         return reporteRepository.save(report);
     }
 
-    public Optional<ReporteModels> getById(Long id){
+    public Optional<ReporteModel> getById(Long id){
         return reporteRepository.findById(id);
     }
-    public ReporteModels updateById(ReporteModels request, Long id){
+    public ReporteModel updateById(ReporteModel request, Long id){
 
-        ReporteModels report = reporteRepository.findById(id)
+        ReporteModel report = reporteRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Reporte con ID " + id + " no encontrado para actualizar."));        report.setTitulo(request.getTitulo());
         report.setServicio(request.getServicio());
         report.setPrecio(request.getPrecio());
@@ -35,6 +35,8 @@ public class ReporteService {
         report.setTelefono(request.getTelefono());
         report.setLat(request.getLat());
         report.setLng(request.getLng());
+        report.setEstado(request.getEstado());
+        report.setTomadoPor(request.getTomadoPor());
         report.setUsuario(request.getUsuario());
         return reporteRepository.save(report);
     }
