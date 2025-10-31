@@ -2,13 +2,8 @@ package com.proyecto.talentoTech.controllers;
 
 
 import com.proyecto.talentoTech.models.CategoriaModel;
-import com.proyecto.talentoTech.models.ReporteModel;
-import com.proyecto.talentoTech.repositories.ICategoriaRepository;
-import com.proyecto.talentoTech.servicios.CategoriaService;
-import com.proyecto.talentoTech.servicios.ReporteService;
+import com.proyecto.talentoTech.services.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

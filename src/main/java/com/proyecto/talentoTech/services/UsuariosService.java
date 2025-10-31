@@ -1,4 +1,4 @@
-package com.proyecto.talentoTech.servicios;
+package com.proyecto.talentoTech.services;
 
 import com.proyecto.talentoTech.models.UsuariosModel;
 import com.proyecto.talentoTech.repositories.IUsuarioRepository;

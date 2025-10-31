@@ -1,4 +1,4 @@
-package com.proyecto.talentoTech.servicios;
+package com.proyecto.talentoTech.services;
 
 import com.proyecto.talentoTech.models.ReporteModel;
 import com.proyecto.talentoTech.repositories.IReporteRepository;
@@ -33,6 +33,7 @@ public class ReporteService {
         report.setPrecio(request.getPrecio());
         report.setDireccion(request.getDireccion());
         report.setTelefono(request.getTelefono());
+        report.setCategoria(request.getCategoria());
         report.setLat(request.getLat());
         report.setLng(request.getLng());
         report.setEstado(request.getEstado());

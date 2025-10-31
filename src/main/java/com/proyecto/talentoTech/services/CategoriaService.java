@@ -1,9 +1,7 @@
-package com.proyecto.talentoTech.servicios;
+package com.proyecto.talentoTech.services;
 
 import com.proyecto.talentoTech.models.CategoriaModel;
-import com.proyecto.talentoTech.models.ReporteModel;
 import com.proyecto.talentoTech.repositories.ICategoriaRepository;
-import com.proyecto.talentoTech.repositories.IReporteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

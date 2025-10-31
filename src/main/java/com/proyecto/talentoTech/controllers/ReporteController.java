@@ -2,7 +2,7 @@ package com.proyecto.talentoTech.controllers;
 
 import com.proyecto.talentoTech.models.ReporteModel;
 
-import com.proyecto.talentoTech.servicios.ReporteService;
+import com.proyecto.talentoTech.services.ReporteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

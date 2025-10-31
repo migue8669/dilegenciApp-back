@@ -24,16 +24,16 @@ public class UsuariosModel {
     private String phone;
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
-    private List<ReporteModels> reportes;
+    private List<ReporteModel> reportes;
 
     // ... Resto de Getters y Setters...
 
     // Getter y Setter para reportes
-    public List<ReporteModels> getReportes() {
+    public List<ReporteModel> getReportes() {
         return reportes;
     }
 
-    public void setReportes(List<ReporteModels> reportes) {
+    public void setReportes(List<ReporteModel> reportes) {
         this.reportes = reportes;
     }
     public String getEmail() {

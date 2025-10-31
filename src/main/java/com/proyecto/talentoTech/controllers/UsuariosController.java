@@ -1,7 +1,7 @@
 package com.proyecto.talentoTech.controllers;
 
 import com.proyecto.talentoTech.models.UsuariosModel;
-import com.proyecto.talentoTech.servicios.UsuariosService;
+import com.proyecto.talentoTech.services.UsuariosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

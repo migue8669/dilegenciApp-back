@@ -20,9 +20,6 @@ public class CategoriaModel {
     @Column(name = "descripcion", length = 255)
     private String descripcion;
 
-    // --- Constructor sin argumentos (Necesario para JPA) ---
-    public CategoriaModel() {
-    }
 
     // --- Getters y Setters ---
 

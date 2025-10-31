@@ -31,15 +31,27 @@ public class ReporteModel {
     private Number lng;
 
     @Column
-    private String usuario; // Usuario que creó la solicitud
+    private String usuario;
 
-    // 🆕 Nuevo campo para el estado (DISPONIBLE, TOMADO, FINALIZADO)
     @Column
     private String estado;
 
-    // 🆕 Nuevo campo para el usuario que tomó la solicitud
     @Column
     private String tomadoPor;
+
+    @Column
+    private String categoria;
+
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+
 
 
     // --- Getters y Setters ---
