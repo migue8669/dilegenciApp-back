@@ -51,11 +51,6 @@ public class ReporteModel {
         this.categoria = categoria;
     }
 
-
-
-
-    // --- Getters y Setters ---
-
     public long getId() {
         return id;
     }
@@ -128,7 +123,6 @@ public class ReporteModel {
         this.usuario = usuario;
     }
 
-    // 🆕 Getters y Setters para los nuevos campos
     public String getEstado() {
         return estado;
     }
